@@ -1,0 +1,100 @@
+$color-ps5: #1F4690;
+$color-xbox: #202529;
+
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+    overflow: hidden;
+}
+
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+.main{
+    display: grid;
+    display: flex;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    height: 100vh;
+    position: relative;
+}
+
+.box{
+    display: flex;
+    z-index: 0;
+    flex-direction: column;
+    gap: 5rem;
+    align-items: center;
+    justify-content: center; 
+    background-size: cover;
+    color: #fff;
+    height: 100%;
+    width: 100%;
+    padding:8rem;
+    transition: all .8s;
+
+    &-ps5{
+        background-image: linear-gradient(rgba($color-ps5,.4), rgba($color-ps5, .4)), url(../img/ps5.png);
+        background-position: center;
+    }
+
+    &-xbox{
+        background-image: linear-gradient(rgba($color-xbox,.6), rgba($color-xbox, .6)), url(../img/xbox.jpg);
+       
+    }
+}
+
+
+.above{
+    width: 175%;
+}
+
+.under{
+    width: 25%;
+
+}
+
+.heading-1{
+    font-size: 3rem;
+    letter-spacing: 3px;
+    display: block;
+    width: max-content;
+}
+
+.btn{
+    &,
+    &:link, 
+    &:visited{
+        font-size: 1.6rem;
+        display: inline-block;
+        width: max-content;
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 2rem 8rem;
+        border: 1px solid #fff;
+        color: inherit;
+        transition: all .3s ease;
+    }
+
+    &:hover{
+        transform: translateY(-3px);
+        background-color: #fff;
+        box-shadow: 0 1px 3px rgba($color: #000000, $alpha: .5);
+    }
+
+    &-ps5{
+        &:hover{
+            color: $color-ps5;
+        } 
+    }
+
+    &-xbox{
+        &:hover{
+            color: $color-xbox;
+        }
+    }
+}
